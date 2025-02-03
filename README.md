@@ -4,7 +4,7 @@ A portfolio mono repo, containing lecture notes/reflective writeups, practice ex
 
 This is primarily a **_personal learning project_**. The contents of this repository is intended for personal reference and to showcase the knowledge and skills acquired through self-directed learning.
 
-At present, I am following the programme and utilising the resources outlined by [Teach Yourself Computer Science](https://teachyourselfcs.com).
+At present, I am following the programme and utilising resources outlined by [Teach Yourself Computer Science](https://teachyourselfcs.com).
 They have kindly taken the time to curate an excellent list of learning materials, and provide guidance around the core topics necessary to obtain a quality education in CS.
 I have linked to them above, if you'd like to review their content. As part of this journey, I'll be covering the following subjects:
 
