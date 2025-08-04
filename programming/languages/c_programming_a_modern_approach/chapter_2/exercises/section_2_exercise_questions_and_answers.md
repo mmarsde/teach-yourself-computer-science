@@ -48,8 +48,8 @@ int main(void)
    (such as code from the standard and/or custom libraries or translations of computed values), prior to compilation. 
    They are prefixed with `#` and declared at the top of the program. The directive included in this program is:
      - `#include <stdio.h>`
-<br>
-<br>
+
+
 ### b) What output does the program produce?
 ### Answer
    - Upon execution, the following output is produced: <br>
@@ -57,13 +57,15 @@ int main(void)
 `Work expands to fill the time` <br>
 `vailable for it's completion` <br>
 <br>
+
 `Process finished with exit code 0`
-<br>
-<br>   
+
    - The first statement prints the string literal `"Parkinson's Law:"` followed by a new line `\n`. This moves the cursor
    to a new line in the terminal, before printing the next string literal `"Work expands to "`. The proceeding statements
    print the remaining string literals followed by a new line.
+   
 ____
+
 ### Question 3 - Section 2.4
 ### Condense the `dweight.c` program by:
 #### 1. Replacing the assignments to `height`, `length`, and `width` with initializers.
