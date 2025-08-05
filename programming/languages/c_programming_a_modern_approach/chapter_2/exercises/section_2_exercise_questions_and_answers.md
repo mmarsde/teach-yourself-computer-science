@@ -55,9 +55,8 @@ int main(void)
    - Upon execution, the following output is produced: <br>
 `Parkinson's Law:` <br>
 `Work expands to fill the time` <br>
-`vailable for it's completion` <br>
-<br>
-
+`available for it's completion` <br>
+<br><br>
 `Process finished with exit code 0`
 
    - The first statement prints the string literal `"Parkinson's Law:"` followed by a new line `\n`. This moves the cursor
