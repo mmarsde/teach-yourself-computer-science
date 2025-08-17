@@ -39,7 +39,8 @@ ___
 #define PI 3.141592f
 #include <stdio.h>
 
-int main(void) {
+int main(void) 
+{
     const float radius = 10.0f;
     const float volume = (4.0f / 3.0f) * PI * (radius * radius * radius);
 
