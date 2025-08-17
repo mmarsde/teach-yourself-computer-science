@@ -32,7 +32,7 @@ ___
 > 2. Write a program that computes the volume of a sphere with a 10-meter radius, using the formula $v = 4/3 \pi r^3$. 
 > Write the fraction $4/3$ as `4.0f/3.0f`. (Try writing it as `4/3`. What happens?)
 >
-> ___Hint:___ C doesn't have an exponentiation operator, so you'll need to multiply $r$ by itself to get $r^3$.
+> ___Hint:___ C doesn't have an exponentiation operator, so you'll need to multiply $r$ by itself twice to get $r^3$.
 
 ### Solution
 ```c++
