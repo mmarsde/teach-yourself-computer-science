@@ -91,6 +91,7 @@ ___
 ### Answer
 ```c++
 #include <stdio.h>
+
 int main(void) {
     int a, b, c, d;
     float e, f, g, h;
