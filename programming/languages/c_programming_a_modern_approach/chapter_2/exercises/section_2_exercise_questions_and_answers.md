@@ -82,7 +82,7 @@ int main(void)
     return 0; 
 }
 ```
-> **_NOTE:_**
+> [!NOTE]
 > Although not explicitly requested in the question, `volume` can also be declared with an initializer.
 ___
 ### Exercise 4 - Section 2.4
