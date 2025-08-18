@@ -45,9 +45,35 @@ int main(void)
     const float volume = (4.0f / 3.0f) * PI * (radius * radius * radius);
 
     printf("The volume of a %.0f-meter sphere is %.0fm. \n", radius, volume);
+
     return 0;
 }
 ```
 ### Answer
 C resolves 4/3 to 1 rather than 1.3333 etc. This is because C applies integer division and truncates the decimal point, when both numbers are defined as whole numbers (integers).
+___
+### Project 3
+> 3. Modify the program of Programming Project 2 so that it prompts the user to enter the radius of the sphere.
+
+### Solution
+```c++
+#define PI 3.141592f
+#include <stdio.h>
+
+int main(void) 
+{
+    float radius;
+
+    printf("Enter radius: ");
+    scanf("%f", &radius);
+
+    const float volume = (4.0f / 3.0f) * PI * (radius * radius * radius);
+
+    printf("The volume of a %.0f-meter sphere is %.0fm. \n", radius, volume);
+
+    return 0;
+}
+```
+> [!Note]
+> The __input__ isn't validated at this point. The user could enter anything (including strings), which would result in `undefined` behavior. This will be addressed in later projects. 
 ___
