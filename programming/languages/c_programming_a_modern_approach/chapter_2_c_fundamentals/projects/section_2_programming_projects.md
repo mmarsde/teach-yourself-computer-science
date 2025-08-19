@@ -95,7 +95,9 @@ int main(void)
 
 ### Project 4
 
-> 4. Write a program that asks the user to enter a dollars-and-cents amount, then displays the amount with 5% tax added: <br> > `Enter an amount: 100.00` <br> > `With tax added: $105.00`
+> 4. Write a program that asks the user to enter a dollars-and-cents amount, then displays the amount with 5% tax added: <br> 
+> `Enter an amount: 100.00` <br> 
+> `With tax added: $105.00`
 
 ### Solution
 
@@ -119,8 +121,9 @@ int main(void)
 
 ### Project 5
 
-> 5. Write a program that asks the user to enter a value for $x$ and then displays the value of the polynomial: <br> > $3x^5 + 2x^4 - 5x^3 -x^2 + 7x - 6$
->
+> 5. Write a program that asks the user to enter a value for $x$ and then displays the value of the polynomial: <br>
+> $3x^5 + 2x^4 - 5x^3 -x^2 + 7x - 6$
+> 
 > **_Hint:_** C doesn't have an exponentiation operator, so you'll need to multiply $x$ by itself repeatedly in order to compute the power of $x$.
 
 ### Solution
@@ -147,7 +150,8 @@ int main(void)
 
 ### Project 6
 
-> 6. Modify the program of Programming Project 5, so the polynomial is evaluated using the following formula: <br> > $((((3x+2)x - 5)x - 1) x + 7)x - 6$
+> 6. Modify the program of Programming Project 5, so the polynomial is evaluated using the following formula: <br> 
+> $((((3x+2)x - 5)x - 1) x + 7)x - 6$
 >
 > Note that the modified program does fewer multiplications. This technique for evaluation polynomials is known as **_Horner's rule_**.
 
@@ -175,7 +179,12 @@ int main(void)
 
 ### Project 7
 
-> 7. Write a program that asks the user to enter a US dollar amount and shows them how to pay that amount using the smallest number of $20, £10, $5 and $1 bills: <br> > `Enter a dollar amount: 93` <br> > `$20 bills: 4` <br> > `$10 bills: 1` <br> > `$5 bills: 0` <br> > `$1 bills: 3`
+> 7. Write a program that asks the user to enter a US dollar amount and shows them how to pay that amount using the smallest number of $20, £10, $5 and $1 bills: <br> <br>
+> `Enter a dollar amount: 93` <br>
+> `$20 bills: 4` <br> 
+> `$10 bills: 1` <br> 
+> `$5 bills: 0` <br> 
+> `$1 bills: 3` <br>
 >
 > **_Hint_**: Divide the amount by 20 to determine the number of $20 bills needed, and then reduce the amount by the total of the $20 bills. Repeat with the other bill sizes. Be sure to use integers values throughout, not floating-point numbers.
 
