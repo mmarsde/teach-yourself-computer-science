@@ -95,9 +95,9 @@ int main(void)
 
 ### Project 4
 
-> 4. Write a program that asks the user to enter a dollars-and-cents amount, then displays the amount with 5% tax added: <br> 
+> 4. Write a program that asks the user to enter a dollars-and-cents amount, then displays the amount with 5% tax added: <br> <br>
 > `Enter an amount: 100.00` <br> 
-> `With tax added: $105.00`
+> `With tax added: $105.00` 
 
 ### Solution
 
