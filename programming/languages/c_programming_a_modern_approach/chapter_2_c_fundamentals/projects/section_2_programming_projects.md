@@ -243,7 +243,7 @@ int main(void)
 ```c++
 #include <stdio.h>
 
-void calculateBalance (float *loanAmount, float repaymentAmount, float monthlyRate)
+void calculate_balance(float *loanAmount, float repaymentAmount, float monthlyRate)
 {
     float interest = *loanAmount * monthlyRate;
     *loanAmount -= repaymentAmount;
@@ -263,13 +263,13 @@ int main(void)
     scanf("%f", &repaymentAmount);
 
     float monthlyRate = (interestRate / 100) / 12;
-    calculateBalance(&loanAmount, repaymentAmount, monthlyRate);
+    calculate_balance(&loanAmount, repaymentAmount, monthlyRate);
     printf("Balance remaining after first payment: : $%.2f\n", loanAmount);
 
-    calculateBalance(&loanAmount, repaymentAmount, monthlyRate);
+    calculate_balance(&loanAmount, repaymentAmount, monthlyRate);
     printf("Balance remaining after second payment: : $%.2f\n", loanAmount);
 
-    calculateBalance(&loanAmount, repaymentAmount, monthlyRate);
+    calculate_balance(&loanAmount, repaymentAmount, monthlyRate);
     printf("Balance remaining after third payment: : $%.2f\n", loanAmount);
 
     return 0;
