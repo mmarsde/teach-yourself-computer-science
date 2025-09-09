@@ -35,3 +35,41 @@
    3. `g` conversion specifiers are typically used when the size of the input is not known at runtime (so can print in either decimal or exponential format).
    4. The format string requires a total field width (`m`) of 6, a precision (`p`) of 2 places after the decimal point and any unused placeholder values should be filled with whitespace to the right. (i.e. the resulting number is left justified).
    5. Because the resulting output only filled 5 of the required placeholders, the remaining placeholder was padded with whitespace to the right.
+
+___
+
+### Question 2 - Section 3.1
+
+> Write calls to `printf` that display a `float` variable `x` in the following formats.
+> 1. Exponential notation; left-justified in a field size of 8; one digit after the decimal point. 
+> 2. Exponential notation; right-justified in a field size of 10; six digits after the decimal point.
+> 3. Fixed decimal notation; left-justified in a field size of 8; three digits after the decimal point.
+> 4. Fixed decimal notation; right-justified in a field size of 6; zero digits after the decimal point.
+
+### Answer
+```c++
+#include <stdio.h>
+
+int main(void) {
+    const float x = 12.2;
+
+    // Exponential notation; left-justified in a field size of 8; one digit after the decimal point.
+    printf("%-8.1e\n", x);
+    // output: "1.2e+01 "
+
+    // Exponential notation; right-justified in a field size of 10; six digits after the decimal point.
+    printf("%10.6e\n", 30.253);
+    // output: "1.220000e+01"
+
+    // Fixed decimal notation; left-justified in a field size of 8; three digits after the decimal point.
+    printf("%-8.3f\n", x);
+    // output: "12.200  "
+
+    // Fixed decimal notation; right-justified in a field size of 6; no digits after the decimal point.
+    printf("%6.0f\n", x);
+    // output: "    12"
+
+    return 0;
+}
+```
+___
