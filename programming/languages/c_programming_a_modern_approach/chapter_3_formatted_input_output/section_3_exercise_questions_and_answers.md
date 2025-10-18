@@ -86,3 +86,38 @@ ___
  2. `"%d-%d-%d"` and `"%d -%d -%d"` produce equivalent output. The only difference with `"%d -%d -%d"` is that whitespace is effectively ignored/placed back onto the input buffer.
  3. `"f%"` and `"f% "` are __not__ equivalent. For `"f%"`, `scanf` stores the first `float` input it finds to an output variable e.g. `&value`  and immediately terminates, (provided it meets the `conversion specifier` requirements). By constrast, with `"f% "`,`scanf` will store the first `float` input it finds into a named variable e.g. `&value` (provided it meets the `conversion specifier` requirements), places any "whitespace" characters (spaces, newline characters, tabs etc) it encounters back onto the input buffer (which is excluded/ignored from further processing) and continues to scan until it finds the next non whitespace character, before terminating.
  4. `"%f,%f"` and `"%f, %f"` produce equivalent output. The only difference with `"%f, %f"`  is that whitespace is effectively ignored/placed back onto the input buffer.
+
+ ### Question 4 - Section 3.2
+ > Suppose we call `scanf` as follows:
+ >
+ > `scanf("%d%f%d", &i, &x, &j);`
+ >
+ > If the user enters
+ >
+ > `10.3 5 6`
+ >
+ > What will be the values of `i`, `x` and `j`? (Assume that `i` and `j` are `int` variables and `x` is a `float` variable.) 
+
+### Answer
+
+```c++
+#include <stdio.h>
+
+int main(void) {
+    int i;
+    int j;
+    float x;
+
+    scanf("%d%f%d", &i, &x, &j);
+    //input: 10.3 5 6
+
+    printf("%d%f%d\n", i, x, j);
+    //Output: 10 0.300000 5
+
+    return 0;
+}
+```
+
+### Explanation: 
+
+`scanf` attempts to map the first input sequence to an `int` variable (`i`), but it encounters `10.3`. `10` is mapped to `i` and `.3` is placed back onto the input buffer for further processing. `scanf` attempts to map the next input sequence to the float variable (`x`), which is `.3`. This is mapped as `0.300000` (padded out to 6 decimal places, as is the default behavior). `scanf` skips any whitespace and attempts to map the next input sequence to the final `int` variable (`j`). `5` is mapped to `j` and `scanf` terminates at the next non-whitespace character, which is `6`.  
