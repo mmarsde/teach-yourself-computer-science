@@ -73,3 +73,16 @@ int main(void) {
 }
 ```
 ___
+
+### Question 3 - Section 3.2
+> For each of the following pairs of `scanf` format strings, indicate whether or not the two strings are equivalent. If they're not, show how they can be distinguished.
+> 1. `"%d"` versus `"%d "`
+> 2. `"%d-%d-%d"` versus `"%d -%d -%d"`
+> 3. `"%f` versus `"%f "`
+> 4. `"%f,%f"` versus `"%f, %f"`
+
+### Answer
+> 1. `"d%"` and `"d% "` are __not__ equivalent. For `"d%"`, `scanf` stores the first `integer` input it finds to an output variable e.g. `&value`  and immediately terminates, (provided it meets the `conversion specifier` requirements). By constrast, with `"d% "`,`scanf` will store the first `integer` input it finds into a named variable e.g. `&value` (provided it meets the `conversion specifier` requirements), places any "whitespace" characters (spaces, newline characters, tabs etc) it encounters back onto the input buffer (which is excluded/ignored from further processing) and continues to scan until it finds the next non whitespace character, before terminating.
+> 2. `"%d-%d-%d"` and `"%d -%d -%d"` produce equivalent output. The only difference with `"%d -%d -%d"` is that whitespace is effectively ignored/placed back onto the input buffer.
+> 3. `"f%"` and `"f% "` are __not__ equivalent. For `"f%"`, `scanf` stores the first `float` input it finds to an output variable e.g. `&value`  and immediately terminates, (provided it meets the `conversion specifier` requirements). By constrast, with `"f% "`,`scanf` will store the first `float` input it finds into a named variable e.g. `&value` (provided it meets the `conversion specifier` requirements), places any "whitespace" characters (spaces, newline characters, tabs etc) it encounters back onto the input buffer (which is excluded/ignored from further processing) and continues to scan until it finds the next non whitespace character, before terminating.
+> 4. `"%f,%f"` and `"%f, %f"` produce equivalent output. The only difference with `"%f, %f"`  is that whitespace is effectively ignored/placed back onto the input buffer.
