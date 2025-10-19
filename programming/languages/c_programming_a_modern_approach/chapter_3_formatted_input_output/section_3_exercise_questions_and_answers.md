@@ -96,16 +96,16 @@ ___
  >
  > `10.3 5 6`
  >
- > What will be the values of `i`, `x` and `j`? (Assume that `i` and `j` are `int` variables and `x` is a `float` variable.) 
+ > what will be the values of `i`, `x` and `j`? (Assume that `i` and `j` are `int` variables and `x` is a `float` variable.) 
 
 ### Answer
 
 ```c++
 #include <stdio.h>
 
-int main(void) {
-    int i;
-    int j;
+int main(void) 
+{    
+    int i, j;
     float x;
 
     scanf("%d%f%d", &i, &x, &j);
@@ -118,6 +118,69 @@ int main(void) {
 }
 ```
 
-### Explanation: 
+### Explanation:
 
 `scanf` attempts to map the first input sequence to an `int` variable (`i`), but it encounters `10.3`. `10` is mapped to `i` and `.3` is placed back onto the input buffer for further processing. `scanf` attempts to map the next input sequence to the float variable (`x`), which is `.3`. This is mapped as `0.300000` (padded out to 6 decimal places, as is the default behavior). `scanf` skips any whitespace and attempts to map the next input sequence to the final `int` variable (`j`). `5` is mapped to `j` and `scanf` terminates at the next non-whitespace character, which is `6`.  
+
+### Question 5 - Section 3.2
+> Suppose we call `scanf` as follows:
+>
+> `scanf("%f%d%f", &x, &i, &y);`
+>
+> if the user enters:
+>
+> `12.3 45.6 789`
+> 
+> what will be the values of `x`, `i`, and `y` after the call? (Assume that `x` and `y` are `float` variables and `i` is an `int` variable.)
+
+### Answer
+
+```c++
+#include <stdio.h>
+
+int main(void) 
+{    
+    float x, y;
+    int i;
+
+    scanf("%f%d%f", &x, &i, &y);
+    //input: 12.3 45.6 789
+    
+    printf("%f %d %f", x, i, y);
+    //output: 12.300000 45 0.600000
+
+    return 0;
+}
+```
+
+### Explanation:
+
+`scanf` maps the first input sequence `12.3` to the `float` variable `x`, but pads the floating point out to 6 decimal places (as per the default behavior in the absence of a `precision` specifier). `scanf` attempts to map the next input sequence to the `int` variable `i`, but encounters `45.6`. `45` is mapped to `i` and `.6` is placed back onto the input buffer for further processing. `scanf` attempts to map the next input sequence to the final `float` variable `y`. `.6` is mapped as `0.600000` (padded with 6 decimal places as per the default behavior) to `y` and `scanf` continues to scan until it terminates at the next sequence of non-whitespace characters, which is `789`.
+
+### Question 6 - Section 3.2
+> Show how to modify the `addfrac.c` of Section 3.2 so that the user is allowed to enter fractions that contain spaces before and after each `/` character.
+
+```c++
+/* Adds two fractions, but doesn't reduce to the lowest terms. */
+#include <stdio.h>
+
+int main(void)
+{
+    int num1, denom1, num2, denom2, result_num, result_denom;
+
+    printf("Enter the first fraction: ");
+    scanf("%d / %d", &num1, &denom1);
+
+    printf("Enter the second fraction: ");
+    scanf("%d / %d", &num2, &denom2);
+
+    result_num = num1 * denom2 + num2 * denom1;
+    result_denom = denom1 * denom2;
+
+    printf("The sum is %d/%d\n", result_num, result_denom);
+
+    return 0;
+}
+
+```
+Spaces are added as part of the format string in the `scanf` calls, before and after the `/` characters.
