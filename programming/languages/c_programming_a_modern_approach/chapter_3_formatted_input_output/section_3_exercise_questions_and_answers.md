@@ -160,6 +160,8 @@ int main(void)
 ### Exercise 6 - Section 3.2
 > Show how to modify the `addfrac.c` of Section 3.2 so that the user is allowed to enter fractions that contain spaces before and after each `/` character.
 
+### Answer
+
 ```c++
 /* Adds two fractions, but doesn't reduce to the lowest terms. */
 #include <stdio.h>
