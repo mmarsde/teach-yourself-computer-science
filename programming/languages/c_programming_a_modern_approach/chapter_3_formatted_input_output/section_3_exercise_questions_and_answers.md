@@ -169,18 +169,25 @@ int main(void)
     int num1, denom1, num2, denom2, result_num, result_denom;
 
     printf("Enter the first fraction: ");
+    fflush(stdout); // keeps user input on the same line
     scanf("%d / %d", &num1, &denom1);
 
     printf("Enter the second fraction: ");
+    fflush(stdout); // keeps user input on the same line
     scanf("%d / %d", &num2, &denom2);
 
     result_num = num1 * denom2 + num2 * denom1;
     result_denom = denom1 * denom2;
 
-    printf("The sum is %d/%d\n", result_num, result_denom);
+    printf("The sum is: %d/%d\n", result_num, result_denom);
 
     return 0;
 }
 
 ```
 Spaces are added as part of the format string in the `scanf` calls, before and after the `/` characters.
+> Output:
+> 
+> Enter the first fraction: 1 / 2 <br>
+> Enter the second fraction: 1 / 6 <br>
+> The sum is: 8/12
